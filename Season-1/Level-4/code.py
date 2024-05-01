@@ -11,18 +11,6 @@ the tests.py again to recreate it.
 
 import sqlite3
 import os
-from flask import Flask, request
-
-### Unrelated to the exercise -- Starts here -- Please ignore
-app = Flask(__name__)
-@app.route("/")
-def source():
-    DB_CRUD_ops().get_stock_info(request.args["input"])
-    DB_CRUD_ops().get_stock_price(request.args["input"])
-    DB_CRUD_ops().update_stock_price(request.args["input"])
-    DB_CRUD_ops().exec_multi_query(request.args["input"])
-    DB_CRUD_ops().exec_user_script(request.args["input"])
-### Unrelated to the exercise -- Ends here -- Please ignore
 
 class Connect(object):
 
@@ -247,3 +235,4 @@ class DB_CRUD_ops(object):
 
         finally:
             db_con.close()
+
