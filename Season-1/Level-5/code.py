@@ -37,6 +37,12 @@ class SHA256_hasher:
         password = binascii.hexlify(hashlib.sha256(password.encode()).digest())
         password_hash = password_hash.encode('ascii')
         return bcrypt.checkpw(password, password_hash)
+    
+PRIVATE_KEY = os.environ.get('PRIVATE_KEY')
+PUBLIC_KEY = os.environ.get('PUBLIC_KEY')
+SECRET_KEY = os.environ.get('SECRET_KEY')
+PASSWORD_HASHER = 'SHA256_hasher'
+
 
 class MD5_hasher:
 
